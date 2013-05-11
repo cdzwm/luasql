@@ -130,4 +130,5 @@ LUASQL_API void luasql_set_info (lua_State *L) {
 	lua_pushliteral (L, "_VERSION");
 	lua_pushliteral (L, "LuaSQL 2.3.0");
 	lua_settable (L, -3);
+	lua_setglobal(L, LUASQL_TABLENAME);
 }
