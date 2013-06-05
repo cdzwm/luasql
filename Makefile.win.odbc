@@ -1,7 +1,7 @@
-LUA_INC=c:\lua5.1\include
-LUA_DIR=c:\lua5.1\lua
-LUA_LIBDIR=c:\lua5.1
-LUA_LIB=c:\lua5.1\lua5.1.lib
+LUA_INC=E:\lua522\
+LUA_DIR=E:\lua522\
+LUA_LIBDIR=E:\lua522\
+LUA_LIB=E:\lua522\lua.lib
 
 T=odbc
 
@@ -14,7 +14,7 @@ OBJS= src\luasql.obj src\ls_$T.obj
 	cl /c /Fo$@ /O2 /I$(LUA_INC) /D_CRT_SECURE_NO_DEPRECATE $(DRIVER_INCLUDE) $<
 
 src\$T.dll: $(OBJS)
-	link /dll /def:src\$T.def /out:$@ $(OBJS) $(DRIVER_LIBS) $(LUA_LIB) 
+	link /dll /def:src\$T.def /out:$@ $(OBJS) $(DRIVER_LIBS) E:\lua522\lua.lib 
 
 install:
 	IF NOT EXIST $(LUA_LIBDIR)\luasql mkdir $(LUA_LIBDIR)\luasql
